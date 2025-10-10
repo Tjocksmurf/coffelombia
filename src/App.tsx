@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import { VideoUploader } from './VideoUploader';
 
 interface Slide {
   id: number;
@@ -69,8 +70,13 @@ function App() {
     alert(`Order placed for: ${slides[currentSlide].title}`);
   };
 
+  const handleVideoUpload = (url: string) => {
+    alert(`Video uploaded successfully! URL: ${url}\n\nYou can now use this URL in your slides by updating the background property and setting backgroundType to 'video'.`);
+  };
+
   return (
     <div className="slider-container">
+      <VideoUploader onUploadComplete={handleVideoUpload} />
       <div className="slide">
         {slides[currentSlide].backgroundType === 'video' ? (
           <video
