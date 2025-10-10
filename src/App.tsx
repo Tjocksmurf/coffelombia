@@ -6,6 +6,7 @@ interface Slide {
   title: string;
   description: string;
   background: string;
+  backgroundType: 'image' | 'video';
   moreInfo: string;
 }
 
@@ -14,7 +15,8 @@ const slides: Slide[] = [
     id: 1,
     title: 'Premium Coffee Beans',
     description: 'Ethically sourced from the finest coffee regions around the world. Experience rich flavors and aromatic blends.',
-    background: 'https://images.pexels.com/photos/4503735/pexels-photo-4503735.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    background: 'https://videos.pexels.com/video-files/3044191/3044191-uhd_2560_1440_25fps.mp4',
+    backgroundType: 'video',
     moreInfo: 'Our coffee beans are carefully selected from sustainable farms across Colombia. Each bean is handpicked at peak ripeness, ensuring the highest quality and most complex flavor profiles. We work directly with local farmers to ensure fair wages and environmentally responsible practices.',
   },
   {
@@ -22,13 +24,15 @@ const slides: Slide[] = [
     title: 'Colombian Heritage',
     description: 'Handpicked by skilled farmers in the lush mountains of Colombia. A tradition passed down through generations.',
     background: 'https://images.pexels.com/photos/4503273/pexels-photo-4503273.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    backgroundType: 'image',
     moreInfo: 'Colombian coffee farming is a centuries-old tradition. Our partner families have been cultivating coffee for generations, perfecting their techniques and maintaining the highest standards. Each harvest represents not just a crop, but a cultural legacy.',
   },
   {
     id: 3,
     title: 'Mountain Grown',
     description: 'Cultivated at high altitudes where the perfect climate creates beans with exceptional flavor and aroma.',
-    background: 'https://images.pexels.com/photos/4503270/pexels-photo-4503270.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    background: 'https://videos.pexels.com/video-files/2909186/2909186-uhd_2560_1440_25fps.mp4',
+    backgroundType: 'video',
     moreInfo: 'High altitude cultivation between 1,200 and 1,800 meters provides the ideal conditions for premium coffee. The cooler temperatures slow the bean maturation process, allowing for more complex sugars and acids to develop, resulting in a superior cup.',
   },
   {
@@ -36,6 +40,7 @@ const slides: Slide[] = [
     title: 'Farm to Cup',
     description: 'From the rolling hills of Colombian coffee plantations directly to your morning ritual. Pure and authentic.',
     background: 'https://images.pexels.com/photos/4503268/pexels-photo-4503268.jpeg?auto=compress&cs=tinysrgb&w=1920',
+    backgroundType: 'image',
     moreInfo: 'We maintain complete transparency throughout our supply chain. From the moment beans are picked to when they reach your cup, we ensure quality control at every step. Our direct trade relationships eliminate middlemen, ensuring freshness and fair compensation for farmers.',
   },
 ];
@@ -66,10 +71,24 @@ function App() {
 
   return (
     <div className="slider-container">
-      <div
-        className="slide"
-        style={{ backgroundImage: `url(${slides[currentSlide].background})` }}
-      >
+      <div className="slide">
+        {slides[currentSlide].backgroundType === 'video' ? (
+          <video
+            key={slides[currentSlide].id}
+            className="slide-video"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src={slides[currentSlide].background} type="video/mp4" />
+          </video>
+        ) : (
+          <div
+            className="slide-image"
+            style={{ backgroundImage: `url(${slides[currentSlide].background})` }}
+          />
+        )}
         <div className={`slide-content ${showInfo ? 'expanded' : ''}`}>
           <h1 className="slide-title">{slides[currentSlide].title}</h1>
           <p className="slide-description">{slides[currentSlide].description}</p>
