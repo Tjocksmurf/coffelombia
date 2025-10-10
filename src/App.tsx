@@ -31,7 +31,7 @@ const slides: Slide[] = [
     id: 3,
     title: 'Andes',
     description: 'A century of coffee farming in the heart of the mountains. Our family\'s hands have touched every tree on this land.',
-    background: 'https://videos.pexels.com/video-files/2909186/2909186-uhd_2560_1440_25fps.mp4',
+    background: '/videos/video1.mp4',
     backgroundType: 'video',
     moreInfo: 'For 100 years, the village of Andes has witnessed our family\'s dedication to coffee. From my great-grandfather who planted the first seedlings to my children who now learn the harvest, we have kept this farm alive through determination and love. The soil here knows our family, and the coffee trees respond to our care with beans that reflect a century of accumulated wisdom and unwavering commitment.',
   },
