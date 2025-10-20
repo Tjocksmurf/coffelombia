@@ -15,7 +15,7 @@ const slides: Slide[] = [
     id: 1,
     title: 'Salgar',
     description: 'Our family has been cultivating coffee in this mountain village for over 100 years. A legacy of dedication and tradition.',
-    background: 'https://streamable.com/e/6n2rf2',
+    background: 'https://endosi.com/coffee_1.mp4',
     backgroundType: 'video',
     moreInfo: 'In the village of Salgar, nestled in the Colombian mountains, our family has been growing coffee for over a century. For 100 years, five generations have tended these same hillsides, passing down the knowledge and passion for producing exceptional coffee. Every bean carries the weight of this heritage and the promise of continuing this tradition for generations to come.',
   },
@@ -23,7 +23,7 @@ const slides: Slide[] = [
     id: 2,
     title: 'Jardín',
     description: 'For 100 years, our farm has been the heart of this village. Each harvest honors those who came before us.',
-    background: 'https://streamable.com/e/j37tky',
+    background: 'https://endosi.com/coffee_2.mp4',
     backgroundType: 'video',
     moreInfo: 'The village of Jardín has been our home for over 100 years. Our great-great-grandparents planted the first coffee trees on this land, and through wars, droughts, and changing times, we have remained. Each morning we walk the same paths they walked, caring for the land with the same devotion. This farm is not just our livelihood—it is our identity, our history, and our promise to the future.',
   },
@@ -31,7 +31,7 @@ const slides: Slide[] = [
     id: 3,
     title: 'Andes',
     description: 'A century of coffee farming in the heart of the mountains. Our family\'s hands have touched every tree on this land.',
-    background: 'https://streamable.com/e/6n2rf2',
+    background: 'https://endosi.com/coffee_1.mp4',
     backgroundType: 'video',
     moreInfo: 'For 100 years, the village of Andes has witnessed our family\'s dedication to coffee. From my great-grandfather who planted the first seedlings to my children who now learn the harvest, we have kept this farm alive through determination and love. The soil here knows our family, and the coffee trees respond to our care with beans that reflect a century of accumulated wisdom and unwavering commitment.',
   },
@@ -73,14 +73,16 @@ function App() {
     <div className="slider-container">
       <div className="slide">
         {slides[currentSlide].backgroundType === 'video' ? (
-          <iframe
+          <video
             key={slides[currentSlide].id}
             className="slide-video"
-            src={slides[currentSlide].background}
-            frameBorder="0"
-            allowFullScreen
-            allow="autoplay"
-          />
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            <source src={slides[currentSlide].background} type="video/mp4" />
+          </video>
         ) : (
           <div
             className="slide-image"
