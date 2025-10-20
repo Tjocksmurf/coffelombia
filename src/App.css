@@ -206,8 +206,8 @@
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -228,11 +228,16 @@
 }
 
 .nav-button.prev {
-  left: 40px;
+  left: 16px;
 }
 
 .nav-button.next {
-  right: 40px;
+  right: 16px;
+}
+
+.slide-content.expanded ~ .nav-button {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .dots {
@@ -496,9 +501,7 @@
   }
 
   .colombia-map {
-    width: 100px;
-    height: 120px;
-    margin: 0 auto;
+    display: none;
   }
 
   .coffee-details {
@@ -516,6 +519,24 @@
 
   .detail-value {
     font-size: 0.9rem;
+  }
+
+  .nav-button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-button svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-button.prev {
+    left: 8px;
+  }
+
+  .nav-button.next {
+    right: 8px;
   }
 }
 
