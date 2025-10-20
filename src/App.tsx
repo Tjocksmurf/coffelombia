@@ -73,16 +73,14 @@ function App() {
     <div className="slider-container">
       <div className="slide">
         {slides[currentSlide].backgroundType === 'video' ? (
-          <video
+          <iframe
             key={slides[currentSlide].id}
             className="slide-video"
-            autoPlay
-            loop
-            muted
-            playsInline
-          >
-            <source src={slides[currentSlide].background} type="video/mp4" />
-          </video>
+            src={slides[currentSlide].background}
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay"
+          />
         ) : (
           <div
             className="slide-image"

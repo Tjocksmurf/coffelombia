@@ -27,8 +27,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   z-index: 0;
+}
+
+.slide-video {
+  border: none;
+  pointer-events: none;
+}
+
+.slide-image {
+  object-fit: cover;
 }
 
 .slide-image {
