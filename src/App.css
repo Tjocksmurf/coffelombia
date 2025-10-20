@@ -57,7 +57,8 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 @keyframes fadeIn {
@@ -80,10 +81,29 @@
   margin-bottom: 8px;
 }
 
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 24px 0 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 24px;
+}
+
 .slide-title {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 24px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.slide-title-sticky {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   line-height: 1.2;
 }
@@ -96,9 +116,21 @@
   opacity: 0.95;
 }
 
-.more-info {
-  margin-bottom: 32px;
-  animation: slideDown 0.4s ease;
+.more-info-scrollable {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 32px;
+}
+
+.slide-content.expanded .action-buttons {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 24px;
 }
 
 .image-gallery {
@@ -407,6 +439,14 @@
 
   .slide-title {
     font-size: 2rem;
+  }
+
+  .slide-title-sticky {
+    font-size: 1.5rem;
+  }
+
+  .sticky-header {
+    padding: 16px 0 12px 0;
   }
 
   .slide-description {

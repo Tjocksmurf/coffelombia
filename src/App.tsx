@@ -128,12 +128,21 @@ function App() {
           />
         )}
         <div className={`slide-content ${showInfo ? 'expanded' : ''}`}>
-          <div className="farm-label">Farm Name</div>
-          <h1 className="slide-title">{slides[currentSlide].title}</h1>
-          <p className="slide-description">{slides[currentSlide].description}</p>
+          {!showInfo && (
+            <>
+              <div className="farm-label">Farm Name</div>
+              <h1 className="slide-title">{slides[currentSlide].title}</h1>
+              <p className="slide-description">{slides[currentSlide].description}</p>
+            </>
+          )}
 
           {showInfo && (
-            <div className="more-info">
+            <>
+              <div className="sticky-header">
+                <div className="farm-label">Farm Name</div>
+                <h1 className="slide-title-sticky">{slides[currentSlide].title}</h1>
+              </div>
+              <div className="more-info-scrollable">
               <div className="image-gallery">
                 {slides[currentSlide].images.map((img, idx) => (
                   <img
@@ -220,28 +229,51 @@ function App() {
 
               <div className="story-label">Our Story</div>
               <p className="story-text">{slides[currentSlide].moreInfo}</p>
-            </div>
+              </div>
+
+              <div className="action-buttons">
+                <button className="icon-button" onClick={handleMoreInfo} title="More Info">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                  </svg>
+                  <span>More Info</span>
+                </button>
+
+                <button className="icon-button order-button" onClick={handleOrder} title="Order">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="9" cy="21" r="1"/>
+                    <circle cx="20" cy="21" r="1"/>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                  </svg>
+                  <span>Order Now</span>
+                </button>
+              </div>
+            </>
           )}
 
-          <div className="action-buttons">
-            <button className="icon-button" onClick={handleMoreInfo} title="More Info">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="16" x2="12" y2="12"/>
-                <line x1="12" y1="8" x2="12.01" y2="8"/>
-              </svg>
-              <span>More Info</span>
-            </button>
+          {!showInfo && (
+            <div className="action-buttons">
+              <button className="icon-button" onClick={handleMoreInfo} title="More Info">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <line x1="12" y1="16" x2="12" y2="12"/>
+                  <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <span>More Info</span>
+              </button>
 
-            <button className="icon-button order-button" onClick={handleOrder} title="Order">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="9" cy="21" r="1"/>
-                <circle cx="20" cy="21" r="1"/>
-                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
-              </svg>
-              <span>Order Now</span>
-            </button>
-          </div>
+              <button className="icon-button order-button" onClick={handleOrder} title="Order">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="9" cy="21" r="1"/>
+                  <circle cx="20" cy="21" r="1"/>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                </svg>
+                <span>Order Now</span>
+              </button>
+            </div>
+          )}
         </div>
 
         <button className="nav-button prev" onClick={prevSlide}>
