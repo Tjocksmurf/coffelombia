@@ -8,6 +8,7 @@ interface Slide {
   background: string;
   backgroundType: 'image' | 'video';
   moreInfo: string;
+  images: string[];
 }
 
 const slides: Slide[] = [
@@ -18,6 +19,7 @@ const slides: Slide[] = [
     background: 'https://endosi.com/coffee_1.mp4',
     backgroundType: 'video',
     moreInfo: 'In the village of Salgar, nestled in the Colombian mountains, our family has been growing coffee for over a century. For 100 years, five generations have tended these same hillsides, passing down the knowledge and passion for producing exceptional coffee. Every bean carries the weight of this heritage and the promise of continuing this tradition for generations to come.',
+    images: ['https://endosi.com/c1.jpg', 'https://endosi.com/c2.jpg', 'https://endosi.com/c3.jpg'],
   },
   {
     id: 2,
@@ -26,12 +28,14 @@ const slides: Slide[] = [
     background: 'https://endosi.com/coffee_2.mp4',
     backgroundType: 'video',
     moreInfo: 'The village of Jardín has been our home for over 100 years. Our great-great-grandparents planted the first coffee trees on this land, and through wars, droughts, and changing times, we have remained. Each morning we walk the same paths they walked, caring for the land with the same devotion. This farm is not just our livelihood—it is our identity, our history, and our promise to the future.',
+    images: ['https://endosi.com/c1.jpg', 'https://endosi.com/c2.jpg', 'https://endosi.com/c3.jpg'],
   },
 ];
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showInfo, setShowInfo] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -79,6 +83,17 @@ function App() {
 
           {showInfo && (
             <div className="more-info">
+              <div className="image-gallery">
+                {slides[currentSlide].images.map((img, idx) => (
+                  <img
+                    key={idx}
+                    src={img}
+                    alt={`Coffee ${idx + 1}`}
+                    className="thumbnail"
+                    onClick={() => setLightboxImage(img)}
+                  />
+                ))}
+              </div>
               <p>{slides[currentSlide].moreInfo}</p>
             </div>
           )}
@@ -126,6 +141,18 @@ function App() {
           ))}
         </div>
       </div>
+
+      {lightboxImage && (
+        <div className="lightbox" onClick={() => setLightboxImage(null)}>
+          <button className="lightbox-close" onClick={() => setLightboxImage(null)}>
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+          <img src={lightboxImage} alt="Full size" className="lightbox-image" />
+        </div>
+      )}
     </div>
   );
 }

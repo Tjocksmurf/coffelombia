@@ -92,6 +92,29 @@
   animation: slideDown 0.4s ease;
 }
 
+.image-gallery {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.thumbnail {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.thumbnail:hover {
+  transform: scale(1.05);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
 .more-info p {
   font-size: 1.125rem;
   line-height: 1.8;
@@ -263,6 +286,78 @@
   }
 }
 
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  cursor: pointer;
+}
+
+.lightbox-image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  animation: scaleIn 0.3s ease;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+
+  .lightbox-close {
+    width: 48px;
+    height: 48px;
+    top: 16px;
+    right: 16px;
+  }
+}
+
 @media (max-width: 480px) {
   .slide-title {
     font-size: 2rem;
@@ -275,5 +370,10 @@
   .icon-button {
     padding: 12px 24px;
     font-size: 1rem;
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
   }
 }
