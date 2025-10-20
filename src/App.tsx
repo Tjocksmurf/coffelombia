@@ -7,6 +7,11 @@ interface CoffeeDetails {
   taste: string;
 }
 
+interface MapCoordinates {
+  x: number;
+  y: number;
+}
+
 interface Slide {
   id: number;
   title: string;
@@ -16,6 +21,7 @@ interface Slide {
   moreInfo: string;
   images: string[];
   details: CoffeeDetails;
+  mapCoords: MapCoordinates;
 }
 
 const slides: Slide[] = [
@@ -32,6 +38,7 @@ const slides: Slide[] = [
       altitude: '1,800m',
       taste: 'Caramel, Citrus, Dark Chocolate',
     },
+    mapCoords: { x: 48, y: 68 },
   },
   {
     id: 2,
@@ -46,6 +53,7 @@ const slides: Slide[] = [
       altitude: '2,100m',
       taste: 'Honey, Red Berries, Smooth',
     },
+    mapCoords: { x: 45, y: 62 },
   },
 ];
 
@@ -135,6 +143,42 @@ function App() {
                     onClick={() => setLightboxImage(img)}
                   />
                 ))}
+              </div>
+
+              <div className="colombia-map">
+                <svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M45,10 L50,8 L55,10 L58,15 L62,18 L65,22 L68,28 L70,35 L72,42 L72,48 L70,55 L68,62 L65,68 L62,72 L58,76 L54,78 L50,80 L46,82 L42,84 L38,86 L35,88 L32,90 L30,95 L28,100 L26,105 L24,108 L22,110 L20,108 L18,105 L16,100 L15,95 L14,90 L13,85 L12,80 L11,75 L10,70 L10,65 L11,60 L12,55 L14,50 L16,45 L18,40 L20,35 L22,30 L24,25 L26,20 L28,18 L30,16 L33,14 L36,12 L40,10 L45,10 Z"
+                    fill="#8B4513"
+                    stroke="#654321"
+                    strokeWidth="0.5"
+                  />
+                  <circle
+                    cx={slides[currentSlide].mapCoords.x}
+                    cy={slides[currentSlide].mapCoords.y}
+                    r="2.5"
+                    fill="#DC2626"
+                    stroke="white"
+                    strokeWidth="0.5"
+                  >
+                    <animate
+                      attributeName="r"
+                      values="2.5;3.5;2.5"
+                      dur="2s"
+                      repeatCount="indefinite"
+                    />
+                  </circle>
+                  <text
+                    x="50"
+                    y="118"
+                    textAnchor="middle"
+                    fill="rgba(255,255,255,0.9)"
+                    fontSize="4"
+                    fontWeight="600"
+                  >
+                    Colombia
+                  </text>
+                </svg>
               </div>
 
               <div className="coffee-details">

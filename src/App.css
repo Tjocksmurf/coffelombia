@@ -380,6 +380,21 @@
   }
 }
 
+.colombia-map {
+  width: 120px;
+  height: 144px;
+  margin: 24px auto;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.colombia-map svg {
+  width: 100%;
+  height: 100%;
+}
+
 .coffee-details {
   display: flex;
   flex-direction: column;
