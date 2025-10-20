@@ -128,6 +128,7 @@ function App() {
           />
         )}
         <div className={`slide-content ${showInfo ? 'expanded' : ''}`}>
+          <div className="farm-label">Farm Name</div>
           <h1 className="slide-title">{slides[currentSlide].title}</h1>
           <p className="slide-description">{slides[currentSlide].description}</p>
 
@@ -217,7 +218,8 @@ function App() {
               </div>
               </div>
 
-              <p>{slides[currentSlide].moreInfo}</p>
+              <div className="story-label">Our Story</div>
+              <p className="story-text">{slides[currentSlide].moreInfo}</p>
             </div>
           )}
 

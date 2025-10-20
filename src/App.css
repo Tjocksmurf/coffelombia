@@ -71,6 +71,15 @@
   }
 }
 
+.farm-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
 .slide-title {
   font-size: 4rem;
   font-weight: 700;
@@ -115,11 +124,22 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
 }
 
-.more-info p {
+.story-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+.story-text {
   font-size: 1.125rem;
   line-height: 1.8;
   opacity: 0.9;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin: 0;
 }
 
 @keyframes slideDown {
@@ -347,6 +367,21 @@
 }
 
 @media (max-width: 768px) {
+  .farm-label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+  }
+
+  .story-label {
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    margin-top: 20px;
+  }
+
+  .story-text {
+    font-size: 1rem;
+  }
+
   .thumbnail {
     width: 100px;
     height: 100px;
@@ -361,12 +396,25 @@
 }
 
 @media (max-width: 480px) {
+  .farm-label {
+    font-size: 0.65rem;
+  }
+
   .slide-title {
     font-size: 2rem;
   }
 
   .slide-description {
     font-size: 1rem;
+  }
+
+  .story-label {
+    font-size: 0.65rem;
+    margin-top: 16px;
+  }
+
+  .story-text {
+    font-size: 0.95rem;
   }
 
   .icon-button {
