@@ -380,14 +380,18 @@
   }
 }
 
+.details-container {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin: 24px 0;
+}
+
 .colombia-map {
-  width: 120px;
-  height: 144px;
-  margin: 24px auto;
+  width: 140px;
+  height: 168px;
   padding: 12px;
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 12px;
-  backdrop-filter: blur(10px);
+  flex-shrink: 0;
 }
 
 .colombia-map svg {
@@ -396,10 +400,10 @@
 }
 
 .coffee-details {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 24px 0;
   padding: 20px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 12px;
@@ -438,6 +442,17 @@
 }
 
 @media (max-width: 768px) {
+  .details-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .colombia-map {
+    width: 100px;
+    height: 120px;
+    margin: 0 auto;
+  }
+
   .coffee-details {
     padding: 16px;
     gap: 12px;
