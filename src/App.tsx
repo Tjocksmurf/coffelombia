@@ -28,7 +28,7 @@ const slides: Slide[] = [
     background: 'https://endosi.com/coffee_2.mp4',
     backgroundType: 'video',
     moreInfo: 'The village of Jardín has been our home for over 100 years. Our great-great-grandparents planted the first coffee trees on this land, and through wars, droughts, and changing times, we have remained. Each morning we walk the same paths they walked, caring for the land with the same devotion. This farm is not just our livelihood—it is our identity, our history, and our promise to the future.',
-    images: ['https://endosi.com/c1.jpg', 'https://endosi.com/c2.jpg', 'https://endosi.com/c3.jpg'],
+    images: ['https://endosi.com/c4.jpg', 'https://endosi.com/c5.jpg', 'https://endosi.com/c6.jpg'],
   },
 ];
 
