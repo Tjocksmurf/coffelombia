@@ -27,22 +27,6 @@ const slides: Slide[] = [
     backgroundType: 'video',
     moreInfo: 'The village of Jardín has been our home for over 100 years. Our great-great-grandparents planted the first coffee trees on this land, and through wars, droughts, and changing times, we have remained. Each morning we walk the same paths they walked, caring for the land with the same devotion. This farm is not just our livelihood—it is our identity, our history, and our promise to the future.',
   },
-  {
-    id: 3,
-    title: 'Andes',
-    description: 'A century of coffee farming in the heart of the mountains. Our family\'s hands have touched every tree on this land.',
-    background: 'https://endosi.com/coffee_1.mp4',
-    backgroundType: 'video',
-    moreInfo: 'For 100 years, the village of Andes has witnessed our family\'s dedication to coffee. From my great-grandfather who planted the first seedlings to my children who now learn the harvest, we have kept this farm alive through determination and love. The soil here knows our family, and the coffee trees respond to our care with beans that reflect a century of accumulated wisdom and unwavering commitment.',
-  },
-  {
-    id: 4,
-    title: 'Pijao',
-    description: 'Since 1925, our farm in this village has produced coffee with pride. A century of tradition in every cup.',
-    background: 'https://images.pexels.com/photos/4503268/pexels-photo-4503268.jpeg?auto=compress&cs=tinysrgb&w=1920',
-    backgroundType: 'image',
-    moreInfo: 'The village of Pijao has been our family\'s home for over 100 years. In 1925, our ancestors cleared this land and planted their first coffee trees with hope and determination. Through every generation, we have honored their sacrifice by maintaining the highest standards and treating this land with respect. When you taste our coffee, you taste a century of Colombian heritage, family devotion, and the rich soil of Pijao.',
-  },
 ];
 
 function App() {
