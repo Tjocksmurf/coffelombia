@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import './App.css';
 
+interface CoffeeDetails {
+  beanType: string;
+  altitude: string;
+  taste: string;
+}
+
 interface Slide {
   id: number;
   title: string;
@@ -9,6 +15,7 @@ interface Slide {
   backgroundType: 'image' | 'video';
   moreInfo: string;
   images: string[];
+  details: CoffeeDetails;
 }
 
 const slides: Slide[] = [
@@ -20,6 +27,11 @@ const slides: Slide[] = [
     backgroundType: 'video',
     moreInfo: 'In the village of Salgar, nestled in the Colombian mountains, our family has been growing coffee for over a century. For 100 years, five generations have tended these same hillsides, passing down the knowledge and passion for producing exceptional coffee. Every bean carries the weight of this heritage and the promise of continuing this tradition for generations to come.',
     images: ['https://endosi.com/c1.jpg', 'https://endosi.com/c2.jpg', 'https://endosi.com/c3.jpg'],
+    details: {
+      beanType: 'Arabica Caturra',
+      altitude: '1,800m',
+      taste: 'Caramel, Citrus, Dark Chocolate',
+    },
   },
   {
     id: 2,
@@ -29,6 +41,11 @@ const slides: Slide[] = [
     backgroundType: 'video',
     moreInfo: 'The village of Jardín has been our home for over 100 years. Our great-great-grandparents planted the first coffee trees on this land, and through wars, droughts, and changing times, we have remained. Each morning we walk the same paths they walked, caring for the land with the same devotion. This farm is not just our livelihood—it is our identity, our history, and our promise to the future.',
     images: ['https://endosi.com/c4.jpg', 'https://endosi.com/c5.jpg', 'https://endosi.com/c6.jpg'],
+    details: {
+      beanType: 'Arabica Typica',
+      altitude: '2,100m',
+      taste: 'Honey, Red Berries, Smooth',
+    },
   },
 ];
 
@@ -119,6 +136,41 @@ function App() {
                   />
                 ))}
               </div>
+
+              <div className="coffee-details">
+                <div className="detail-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M6 3v18h18V3H6z"/>
+                    <path d="M6 9h18"/>
+                  </svg>
+                  <div>
+                    <span className="detail-label">Bean Type</span>
+                    <span className="detail-value">{slides[currentSlide].details.beanType}</span>
+                  </div>
+                </div>
+
+                <div className="detail-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                  <div>
+                    <span className="detail-label">Altitude</span>
+                    <span className="detail-value">{slides[currentSlide].details.altitude}</span>
+                  </div>
+                </div>
+
+                <div className="detail-item">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                  </svg>
+                  <div>
+                    <span className="detail-label">Taste Notes</span>
+                    <span className="detail-value">{slides[currentSlide].details.taste}</span>
+                  </div>
+                </div>
+              </div>
+
               <p>{slides[currentSlide].moreInfo}</p>
             </div>
           )}
