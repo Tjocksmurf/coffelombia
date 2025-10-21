@@ -329,6 +329,14 @@
 }
 
 @media (max-width: 768px) {
+  .slide-content {
+    padding: 32px 24px;
+  }
+
+  .slide-content.expanded {
+    padding: 16px;
+  }
+
   .slide-title {
     font-size: 2.5rem;
   }
