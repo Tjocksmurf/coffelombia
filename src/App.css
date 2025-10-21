@@ -329,8 +329,16 @@
 }
 
 @media (max-width: 768px) {
+  .slide-video,
+  .slide-image {
+    height: 120%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   .slide-content {
     padding: 32px 24px;
+    padding-bottom: 80px;
   }
 
   .slide-content.expanded {
@@ -347,14 +355,22 @@
   }
 
   .action-buttons {
-    flex-direction: column;
-    gap: 16px;
+    flex-direction: row;
+    gap: 12px;
+    margin-bottom: 16px;
   }
 
   .icon-button {
-    width: 100%;
-    max-width: 280px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    gap: 8px;
+    flex: 1;
     justify-content: center;
+  }
+
+  .icon-button svg {
+    width: 20px;
+    height: 20px;
   }
 
   .nav-button {
