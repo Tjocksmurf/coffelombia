@@ -331,7 +331,7 @@
 @media (max-width: 768px) {
   .slide-video,
   .slide-image {
-    height: 120%;
+    height: 135%;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -343,6 +343,7 @@
 
   .slide-content.expanded {
     padding: 16px;
+    padding-left: 24px;
   }
 
   .slide-title {
