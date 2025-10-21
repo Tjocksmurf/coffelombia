@@ -888,7 +888,7 @@
 @media (max-width: 768px) {
   .order-modal {
     padding: 32px 24px;
-    margin: 20px;
+    margin: 16px;
   }
 
   .order-item {
@@ -905,6 +905,7 @@
 @media (max-width: 480px) {
   .order-modal {
     padding: 24px 16px;
+    margin: 12px;
   }
 
   .order-modal h2 {
