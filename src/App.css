@@ -102,7 +102,7 @@
   letter-spacing: 1.5px;
   color: rgba(255, 255, 255, 0.6);
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .sticky-header {
@@ -384,11 +384,26 @@
   padding: 20px;
 }
 
+@media (max-width: 768px) {
+  .lightbox {
+    padding: 0;
+  }
+}
+
 .lightbox-image {
   max-width: 90vw;
   max-height: 90vh;
   object-fit: contain;
   animation: scaleIn 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .lightbox-image {
+    max-width: 100vw;
+    max-height: 100vh;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .lightbox-close {
@@ -873,6 +888,7 @@
 @media (max-width: 768px) {
   .order-modal {
     padding: 32px 24px;
+    margin: 20px;
   }
 
   .order-item {
