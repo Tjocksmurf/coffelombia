@@ -95,7 +95,6 @@
     transform: translateY(0);
   }
 }
-
 .farm-label {
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -210,7 +209,6 @@
     transform: translateY(0);
   }
 }
-
 .action-buttons {
   display: flex;
   gap: 24px;
@@ -337,27 +335,22 @@
     top: 50%;
     transform: translateY(-50%);
   }
-
   .slide-content {
     padding: 32px 24px;
     padding-bottom: 150px;
   }
-
   .slide-content.expanded {
     padding: 16px;
     padding-left: 24px;
-    padding-bottom: 140px;
+    padding-bottom: 31px;
   }
-
   .slide-title {
     font-size: 2.5rem;
   }
-
   .slide-description {
     font-size: 1.125rem;
     margin-bottom: 32px;
   }
-
   .action-buttons {
     flex-direction: row;
     gap: 12px;
@@ -368,7 +361,6 @@
     right: 24px;
     z-index: 15;
   }
-
   .icon-button {
     padding: 12px 20px;
     font-size: 0.95rem;
@@ -376,30 +368,24 @@
     flex: 1;
     justify-content: center;
   }
-
   .icon-button svg {
     width: 20px;
     height: 20px;
   }
-
   .nav-button {
     width: 48px;
     height: 48px;
   }
-
   .nav-button.prev {
     left: 16px;
   }
-
   .nav-button.next {
     right: 16px;
   }
-
   .dots {
     bottom: 32px;
   }
 }
-
 .lightbox {
   position: fixed;
   top: 0;
@@ -422,7 +408,6 @@
     padding: 0;
   }
 }
-
 .lightbox-image {
   max-width: 90vw;
   max-height: 90vh;
@@ -438,7 +423,6 @@
     height: 100%;
   }
 }
-
 .lightbox-close {
   position: absolute;
   top: 24px;
@@ -474,28 +458,23 @@
     transform: scale(1);
   }
 }
-
 @media (max-width: 768px) {
   .farm-label {
     font-size: 0.7rem;
     letter-spacing: 1px;
   }
-
   .story-label {
     font-size: 0.7rem;
     letter-spacing: 1px;
     margin-top: 20px;
   }
-
   .story-text {
     font-size: 1rem;
   }
-
   .thumbnail {
     width: 100px;
     height: 100px;
   }
-
   .lightbox-close {
     width: 48px;
     height: 48px;
@@ -503,48 +482,38 @@
     right: 16px;
   }
 }
-
 @media (max-width: 480px) {
   .farm-label {
     font-size: 0.65rem;
   }
-
   .slide-title {
     font-size: 2rem;
   }
-
   .slide-title-sticky {
     font-size: 1.5rem;
   }
-
   .sticky-header {
     padding: 16px 0 12px 10px;
   }
-
   .slide-description {
     font-size: 1rem;
   }
-
   .story-label {
     font-size: 0.65rem;
     margin-top: 16px;
   }
-
   .story-text {
     font-size: 0.95rem;
   }
-
   .icon-button {
     padding: 12px 24px;
     font-size: 1rem;
   }
-
   .thumbnail {
     width: 80px;
     height: 80px;
   }
 }
-
 .details-container {
   display: flex;
   gap: 24px;
@@ -611,47 +580,37 @@
     flex-direction: column;
     gap: 16px;
   }
-
   .colombia-map {
     display: none;
   }
-
   .coffee-details {
     padding: 16px;
     gap: 12px;
   }
-
   .detail-item {
     gap: 10px;
   }
-
   .detail-label {
     font-size: 0.7rem;
   }
-
   .detail-value {
     font-size: 0.9rem;
   }
-
   .nav-button {
     width: 48px;
     height: 48px;
   }
-
   .nav-button svg {
     width: 24px;
     height: 24px;
   }
-
   .nav-button.prev {
     left: 8px;
   }
-
   .nav-button.next {
     right: 8px;
   }
 }
-
 .order-modal {
   background: white;
   border-radius: 16px;
@@ -923,33 +882,29 @@
     padding: 32px 24px;
     margin: 16px;
   }
-
   .order-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
   }
-
   .quantity-controls {
     align-self: flex-end;
   }
 }
-
 @media (max-width: 480px) {
   .order-modal {
     padding: 24px 16px;
     margin: 12px;
   }
-
   .order-modal h2 {
     font-size: 1.5rem;
   }
-
   .order-total {
     font-size: 1.25rem;
   }
-
   .total-price {
     font-size: 1.5rem;
   }
 }
+
+/*# sourceMappingURL=App.css.map */
