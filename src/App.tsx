@@ -28,10 +28,10 @@ const slides: Slide[] = [
   {
     id: 1,
     title: 'Salgar',
-    description: 'Our family has been cultivating coffee in this mountain village for over 100 years. A legacy of dedication and tradition.',
+    description: 'Our family has cultivated coffee here for over 100 years.',
     background: 'https://endosi.com/coffee_1.mp4',
     backgroundType: 'video',
-    moreInfo: 'In the village of Salgar, nestled in the Colombian mountains, our family has been growing coffee for over a century. For 100 years, five generations have tended these same hillsides, passing down the knowledge and passion for producing exceptional coffee. Every bean carries the weight of this heritage and the promise of continuing this tradition for generations to come.',
+    moreInfo: 'In Salgar, our family has grown coffee for over a century. Five generations have tended these hillsides, passing down knowledge and passion for exceptional coffee.',
     images: ['https://endosi.com/c1.jpg', 'https://endosi.com/c2.jpg', 'https://endosi.com/c3.jpg'],
     details: {
       beanType: 'Arabica Caturra',
@@ -43,10 +43,10 @@ const slides: Slide[] = [
   {
     id: 2,
     title: 'Jardín',
-    description: 'For 100 years, our farm has been the heart of this village. Each harvest honors those who came before us.',
+    description: 'For 100 years, our farm has been the heart of this village.',
     background: 'https://endosi.com/coffee_2.mp4',
     backgroundType: 'video',
-    moreInfo: 'The village of Jardín has been our home for over 100 years. Our great-great-grandparents planted the first coffee trees on this land, and through wars, droughts, and changing times, we have remained. Each morning we walk the same paths they walked, caring for the land with the same devotion. This farm is not just our livelihood—it is our identity, our history, and our promise to the future.',
+    moreInfo: 'Jardín has been our home for over 100 years. Our great-great-grandparents planted the first trees here. This farm is our identity, history, and promise to the future.',
     images: ['https://endosi.com/c4.jpg', 'https://endosi.com/c5.jpg', 'https://endosi.com/c6.jpg'],
     details: {
       beanType: 'Arabica Typica',
