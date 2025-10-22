@@ -6,9 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "homepage": "https://Tjocksmurf.github.io/coffelombia",
   "dependencies": {
     "@supabase/supabase-js": "^2.75.0",
     "react": "^19.2.0",
@@ -25,6 +28,7 @@
     "eslint-plugin-react-refresh": "^0.4.23",
     "globals": "^16.4.0",
     "sass-embedded": "^1.93.2",
+  "gh-pages": "^5.0.0",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.45.0",
     "vite": "^7.1.9"
