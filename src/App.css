@@ -155,6 +155,8 @@
   padding: 20px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 24px;
+  left: auto;
+  right: auto;
 }
 
 .image-gallery {
@@ -338,7 +340,7 @@
 
   .slide-content {
     padding: 32px 24px;
-    padding-bottom: 80px;
+    padding-bottom: 120px;
   }
 
   .slide-content.expanded {
@@ -359,6 +361,11 @@
     flex-direction: row;
     gap: 12px;
     margin-bottom: 16px;
+    position: fixed;
+    bottom: 20px;
+    left: 24px;
+    right: 24px;
+    z-index: 20;
   }
 
   .icon-button {
