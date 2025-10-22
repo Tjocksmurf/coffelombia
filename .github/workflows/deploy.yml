@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -27,6 +29,13 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Show build output
+        run: |
+          echo "Listing workspace root"
+          ls -la
+          echo "Listing dist directory (if any)"
+          if [ -d ./dist ]; then ls -la ./dist; else echo "dist directory not found"; fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
