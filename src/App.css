@@ -148,7 +148,7 @@
 
 .slide-content.expanded .action-buttons {
   position: sticky;
-  bottom: 0;
+  bottom: 70px;
   z-index: 30;
   background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
@@ -340,12 +340,13 @@
 
   .slide-content {
     padding: 32px 24px;
-    padding-bottom: 120px;
+    padding-bottom: 150px;
   }
 
   .slide-content.expanded {
     padding: 16px;
     padding-left: 24px;
+    padding-bottom: 140px;
   }
 
   .slide-title {
@@ -360,12 +361,12 @@
   .action-buttons {
     flex-direction: row;
     gap: 12px;
-    margin-bottom: 16px;
+    margin-bottom: 0;
     position: fixed;
-    bottom: 20px;
+    bottom: 70px;
     left: 24px;
     right: 24px;
-    z-index: 20;
+    z-index: 15;
   }
 
   .icon-button {
