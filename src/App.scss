@@ -340,7 +340,7 @@
 
   .slide-content {
     padding: 32px 24px;
-    padding-bottom: 150px;
+    padding-bottom: 120px;
   }
 
   .slide-content.expanded {
@@ -356,6 +356,13 @@
   .slide-description {
     font-size: 1.125rem;
     margin-bottom: 32px;
+    display: none;
+  }
+
+  .expanded{
+    .slide-description {
+      display: block;
+    }
   }
 
   .action-buttons {
@@ -524,6 +531,8 @@
   .slide-description {
     font-size: 1rem;
   }
+
+
 
   .story-label {
     font-size: 0.65rem;
